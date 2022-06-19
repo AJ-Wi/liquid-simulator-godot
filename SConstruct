@@ -13,7 +13,7 @@ opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'bin/lib/'))
 opts.Add(PathVariable('target_name', 'The library name.', 'libliquidsim', PathVariable.PathAccept))
-opts.Add(PathVariable('emscripten', "The path where the emscripten is installed", '/home/wladimir/emsdk/upstream/emscripten/'))
+opts.Add(PathVariable('emscripten', "The path where the emscripten is installed", '', PathVariable.PathAccept))
 
 # Local dependency paths, adapt them to your setup
 godot_headers_path = "godot-cpp/godot-headers/"

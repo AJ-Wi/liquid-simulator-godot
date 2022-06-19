@@ -25,6 +25,20 @@ Pour le développement de ce guide, nous devons avoir les éléments suivants in
 
 :::
 
+## Réglages préliminaires.
+
+Avant de poursuivre le processus, il est important de noter que pour plus de commodité, nous pouvons créer un alias
+pour les commandes **"emcc"** et **"em++"** fournies par **"emscripten"**, nous procédons comme suit.
+
+```sh
+$ alias emcc="chemin/vers/votre/emscripten/emcc"
+$ alias em++="chemin/vers/votre/emscripten/em++"
+```
+
+Pour plus d'informations sur la façon de télécharger et d'installer emscripten, visitez leur [page officielle](https://emscripten.org/docs/getting_started/downloads.html).
+
+Si vous ne choisissez pas de faire ce paramétrage, et souhaitez compiler une version web du plugin, suivez les instructions dans [Problèmes de compilation.](#problemas-al-compilar)
+
 ## Dépôt de clones.
 
 ::: warning
@@ -165,7 +179,12 @@ Comme mentionné au début, si vous travaillez avec la version ["originale"](htt
 Si vous continuez à travailler avec la version de ce référentiel, je vous laisserai une astuce ou une solution à un problème que j'ai rencontré en cours de route et mon expérience vous aidera probablement.
 
 ::: tip
-Au moment de compiler le plugin pour la version web, j'ai trouvé que le script **"SConstruct"** ne contenait pas le fragment de code nécessaire pour cette tâche, j'ai récupéré un script bash des dépôts **"godot-cpp"** pour compiler vers la version html5 , cependant, cette compilation m'a posé de nombreux problèmes, et même avec peu d'informations pour la résoudre, la recommandation de la documentation **"godot"** , quant à la version de **"Emscripten"** est 1.39.9, après tant de tentatives et de recherches j'ai pu pour conclure que pour la compilation de ce plugin la version de **"Emscripten"** que nous devrions utiliser est 2.0.17, et pour plus de commodité, ajoutez l'extrait de code manquant pour cette opération dans le fichier **"SConstruct"** , afin que nous puissions directement exécuter la commande **"scons"** avec en plus que nous devrions utiliser l' attribut **"emscripten"** pour fournir le chemin vers notre outil de compilation, voici un exemple :
+Au moment de compiler le plugin pour la version web, j'ai trouvé que le script **"SConstruct"** ne contenait pas le fragment de code nécessaire pour cette tâche, je l'ai récupéré dans les dépôts de **"godot-cpp"** un script bash pour compiler vers la version html5, cependant, cette compilation m'a posé beaucoup de problèmes, et même avec peu d'informations pour y remédier, la recommandation de la documentation **"godot"**, quant à la version de **"Emscripten"** est 1.39.9, après de nombreuses tentatives et recherches j'ai pu conclure que pour la compilation de ce plugin la version de **"Emscripten"** que nous devrions utiliser est 2.0.17, et pour plus de confort Ajoutez le extrait de code manquant pour cette opération dans le fichier **"SConstruct"**, afin que nous puissions exécuter directement la commande **"scons"**.
+
+:::
+
+::: warning
+Si vous n'avez pas d'alias pour les commandes **"emcc"** et **"em++"**, vous devez ajouter l'attribut **"emscripten"** pour fournir le chemin de notre outil de construction, ici c'est un exemple:
 
 ```sh
 $ scons platform=javascript emscripten=/usr/bin/emscriptem/
