@@ -31,8 +31,8 @@ Avant de poursuivre le processus, il est important de noter que pour plus de com
 pour les commandes **"emcc"** et **"em++"** fournies par **"emscripten"**, nous procédons comme suit.
 
 ```sh
-$ alias emcc="chemin/vers/votre/emscripten/emcc"
-$ alias em++="chemin/vers/votre/emscripten/em++"
+$ echo 'alias emcc="chemin/vers/votre/emscripten/emcc"' >> ~/.bashrc
+$ echo 'alias em++="chemin/vers/votre/emscripten/em++"' >> ~/.bashrc
 ```
 
 Pour plus d'informations sur la façon de télécharger et d'installer emscripten, visitez leur [page officielle](https://emscripten.org/docs/getting_started/downloads.html).

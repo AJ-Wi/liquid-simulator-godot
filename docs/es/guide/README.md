@@ -31,8 +31,8 @@ Antes de continuar con el proceso, es importante señalar que para mayor comodid
 para el comando **"emcc"** y **"em++"** provistos por **"emscripten"**, para ello lo hacemos de la siguiente manera.
 
 ```sh
-$ alias emcc="ruta/de/tu/carpeta/de/emscripten/emcc"
-$ alias em++="ruta/de/tu/carpeta/de/emscripten/em++"
+$ echo 'alias emcc="ruta/de/tu/emscripten/emcc"' >> ~/.bashrc
+$ echo 'alias em++="ruta/de/tu/emscripten/em++"' >> ~/.bashrc
 ```
 
 Para mayor información sobre como descargar e instalar emscripten, visita su [página oficial](https://emscripten.org/docs/getting_started/downloads.html).
